@@ -61,23 +61,27 @@ function updateHomeCopy() {
     const { yourName, theirName } = readNames()
 
     if (!yourName && !theirName) {
+        document.title = 'Mydate | Cute Love Page'
         homeTitle.textContent = defaultCopy.title
         homeSubtitle.textContent = defaultCopy.subtitle
         return
     }
 
     if (yourName && theirName) {
+        document.title = `${yourName} + ${theirName} | Mydate`
         homeTitle.textContent = `${yourName} made this cute little surprise for ${theirName}.`
         homeSubtitle.textContent = `Pick the sweetest question and let the cat-approved romance begin.`
         return
     }
 
     if (theirName) {
+        document.title = `${theirName} | Mydate`
         homeTitle.textContent = `A cute little surprise page for ${theirName}.`
         homeSubtitle.textContent = `Add your own name too, then choose the perfect question to ask.`
         return
     }
 
+    document.title = `${yourName} | Mydate`
     homeTitle.textContent = `${yourName}, your cute love page is almost ready.`
     homeSubtitle.textContent = `Add their name next, then launch the sweetest question with the cat cheering you on.`
 }

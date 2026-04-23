@@ -6,6 +6,39 @@ const successTargets = {
     married: 'yes.html?type=married'
 }
 
+const personalizedCopy = {
+    valentine: {
+        defaultTitle: "Will you be my Valentine? 💕",
+        title: (toName) => `Will you be my Valentine, ${toName}? 💕`,
+        prompt: (fromName, toName) => {
+            if (fromName && toName) return `${fromName} has one tiny question for ${toName}. 💖`
+            if (toName) return `One tiny yes from ${toName} would make this day extra sweet. 💕`
+            if (fromName) return `${fromName} will be smiling all day with one little yes. 💕`
+            return "One tiny yes and I will be smiling all day. 💕"
+        }
+    },
+    date: {
+        defaultTitle: "Will you go on a date with me? 🎀",
+        title: (toName) => `Will you go on a date with me, ${toName}? 🎀`,
+        prompt: (fromName, toName) => {
+            if (fromName && toName) return `${fromName} wants to plan something cute with ${toName}. 🎀`
+            if (toName) return `Say yes, ${toName}, and something cute will be planned just for you. 🎀`
+            if (fromName) return `Say yes and ${fromName} will plan something cute for both of you. 🎀`
+            return "Say yes and I’ll plan something cute for us. 🎀"
+        }
+    },
+    married: {
+        defaultTitle: "Will you marry me? 💍",
+        title: (toName) => `Will you marry me, ${toName}? 💍`,
+        prompt: (fromName, toName) => {
+            if (fromName && toName) return `${fromName} is asking ${toName} the forever question. 💍`
+            if (toName) return `${toName}, this is the forever question, so be nice to me. 💍`
+            if (fromName) return `${fromName} is asking the forever question, so be nice. 💍`
+            return "This is my forever question, so be nice to me. 💍"
+        }
+    }
+}
+
 const gifStages = [
     "https://media.tenor.com/eNHbizSfVb0AAAAj/lovemode-cute.gif",
     "https://media.tenor.com/4F0K8CdxlRIAAAAj/cat-surprised.gif",
@@ -49,6 +82,11 @@ const pikachuGif = document.getElementById('pikachu-gif')
 const yesBtn = document.getElementById('yes-btn')
 const noBtn = document.getElementById('no-btn')
 const music = document.getElementById('bg-music')
+const heroBanner = document.querySelector('.hero-banner')
+const pagePrompt = document.querySelector('.page-prompt')
+const backLink = document.querySelector('.back-link')
+
+applyPagePersonalization()
 
 music.muted = true
 music.volume = 0.3
@@ -75,7 +113,7 @@ function toggleMusic() {
 }
 
 function handleYesClick() {
-    window.location.href = successTargets[pageType] || 'yes.html'
+    window.location.href = withNameParams(successTargets[pageType] || 'yes.html')
 }
 
 function handleNoClick() {
@@ -141,4 +179,36 @@ function runAway() {
     noBtn.style.left = `${randomX}px`
     noBtn.style.top = `${randomY}px`
     noBtn.style.zIndex = '50'
+}
+
+function readStoredNames() {
+    const params = new URLSearchParams(window.location.search)
+    return {
+        fromName: params.get('from') || window.localStorage.getItem('vday-your-name') || '',
+        toName: params.get('to') || window.localStorage.getItem('vday-their-name') || ''
+    }
+}
+
+function withNameParams(base) {
+    const { fromName, toName } = readStoredNames()
+    const url = new URL(base, window.location.href)
+
+    if (fromName) url.searchParams.set('from', fromName)
+    if (toName) url.searchParams.set('to', toName)
+
+    return `${url.pathname.split('/').pop()}${url.search}`
+}
+
+function applyPagePersonalization() {
+    const { fromName, toName } = readStoredNames()
+    const copy = personalizedCopy[pageType]
+
+    if (!copy) return
+
+    const titleText = toName ? copy.title(toName) : copy.defaultTitle
+
+    document.title = titleText
+    heroBanner.textContent = titleText
+    pagePrompt.textContent = copy.prompt(fromName, toName)
+    backLink.href = withNameParams('index.html')
 }

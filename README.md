@@ -1,107 +1,92 @@
-# Valentine's Day Interactive Page
+# Mydate
 
-A fun, interactive Valentine's Day page where the "Yes" button grows bigger every time they click "No" — with falling hearts, cute GIFs, music, and playful toast messages. Built with pure HTML, CSS, and JavaScript.
+A cute, personalized GitHub Pages mini-site for asking someone to be your Valentine, go on a date, or say yes to forever.
 
-**Live demo:** [sahilgogna.github.io/v-day](https://sahilgogna.github.io/v-day)
+Live site:
+`https://helmij1992.github.io/Mydate/`
 
+## Features
 
----
+- Personalized homepage with `Your Name` and `Their Name`
+- Three playful question flows:
+  - `valentine.html`
+  - `date.html`
+  - `married.html`
+- Cute cat reaction GIFs
+- Playful `No` button logic
+- Celebration page with confetti
+- GitHub Pages ready static site
 
-## Want to Use This to Impress Your GF/Wife?
+## Project Files
 
-You've got three options — pick whatever works for you.
-
----
-
-### Option 1: Just Send the Link
-
-No setup needed. Just send this link:
-
-```
-https://sahilgogna.github.io/v-day
-```
-
-That's it. Done. You're welcome.
-
----
-
-### Option 2: Fork It and Make It Yours
-
-Want your own version you can customize? Follow these steps:
-
-#### 1. Fork the Repo
-- Go to [github.com/SahilGogna/v-day](https://github.com/SahilGogna/v-day)
-- Click the **Fork** button in the top-right corner
-- This creates a copy of the repo under your GitHub account
-
-#### 2. Enable GitHub Pages
-- In your forked repo, go to **Settings** (the gear icon tab)
-- In the left sidebar, click **Pages**
-- Under **Source**, select **"Deploy from a branch"**
-- Under **Branch**, select **`main`** and **`/ (root)`**
-- Click **Save**
-
-#### 3. Wait ~2 Minutes
-- GitHub will build and deploy your site
-- Your site will be live at:
-  ```
-  https://yourusername.github.io/v-day
-  ```
-  (Replace `yourusername` with your actual GitHub username)
-
-#### 4. Personalize It
-- Edit `index.html` to change the question, title, or GIF
-- Edit `yes.html` to change the celebration page
-- Edit `script.js` to tweak the toast messages, button behavior, or GIF changes
-- Edit `style.css` to change colors, fonts, or animations
-- Swap out the music file in the `music/` folder with your own song
-
-> **Tip:** You can edit files directly on GitHub by clicking on a file and hitting the pencil (edit) icon. No need to clone anything locally if you just want quick changes.
-
----
-
-### Option 3: Vibe Code Your Own From Scratch
-
-Want something completely unique? Use AI to build it.
-
-#### 1. Open Antigravity
-- Google **"anti gravity google"** or go to [antigravity.dev](https://www.antigravity.dev)
-- It has **Sonnet 4.6** built right in — no need to go anywhere else
-
-#### 2. Describe What You Want
-- Tell it exactly what you're imagining. Some ideas:
-  - Falling hearts animation with a love letter reveal
-  - Interactive story where they choose their adventure
-  - A countdown to Valentine's Day with daily messages
-  - A quiz about your relationship
-  - Whatever your heart desires — literally
-
-#### 3. Get the Code
-- Antigravity will generate the full HTML, CSS, and JavaScript for you
-- Copy the code into files on your computer
-
-#### 4. Deploy It
-- Create a new GitHub repository
-- Push your code to it
-- Enable GitHub Pages the same way as **Option 2** (Settings → Pages → Deploy from branch → main → root → Save)
-- Your custom creation goes live in ~2 minutes
-
----
-
-## Project Structure
-
-```
-v-day/
-├── index.html       # Main page — "Will you be my Valentine?"
-├── yes.html         # Celebration page after they say Yes
-├── script.js        # Main page logic (button growth, GIF swaps, toasts)
-├── yes-script.js    # Celebration page animations
-├── style.css        # All the styling and animations
-└── music/           # Background music
+```text
+Mydate/
+├── index.html
+├── home.js
+├── valentine.html
+├── date.html
+├── married.html
+├── question-page.js
+├── yes.html
+├── yes-script.js
+├── style.css
+└── music/
 ```
 
----
+## Local Preview
+
+Open `index.html` in a browser, or serve the folder with any static file server.
+
+Examples:
+
+```bash
+cd /Users/muhammadhelmi/Documents/Mydate
+python3 -m http.server 8000
+```
+
+Then open:
+`http://localhost:8000`
+
+## GitHub Pages
+
+This repo is configured to deploy from:
+
+- Branch: `main`
+- Folder: `/ (root)`
+
+Published URL:
+`https://helmij1992.github.io/Mydate/`
+
+## Custom Domain
+
+To use a custom domain, you will need:
+
+1. A domain or subdomain you control
+2. DNS access from your domain provider
+3. A `CNAME` file in this repo with your chosen domain
+
+Typical setup:
+
+- For a subdomain like `love.example.com`:
+  - Create a `CNAME` DNS record pointing `love.example.com` to `helmij1992.github.io`
+- For an apex domain like `example.com`:
+  - Use your DNS provider's `A` or `ALIAS/ANAME` records based on GitHub Pages requirements
+
+After DNS is ready, add the custom domain in GitHub Pages settings and commit a `CNAME` file containing only the domain.
+
+## Personalization
+
+The site passes names using query params and local storage:
+
+- `from`
+- `to`
+
+Example:
+
+```text
+https://helmij1992.github.io/Mydate/valentine.html?from=Muhammad&to=Alya
+```
 
 ## License
 
-Do whatever you want with it. Make someone smile.
+Personal project. Customize freely.

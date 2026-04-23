@@ -31,12 +31,18 @@ function applyPageContent() {
     const params = new URLSearchParams(window.location.search)
     const type = params.get('type')
     const content = successContent[type]
+    const fromName = params.get('from') || window.localStorage.getItem('vday-your-name') || ''
+    const toName = params.get('to') || window.localStorage.getItem('vday-their-name') || ''
 
     if (!content) return
 
-    document.title = content.title
-    document.getElementById('success-title').textContent = content.title
-    document.getElementById('success-message').textContent = content.message
+    const title = personalizeSuccessTitle(type, content.title, toName)
+    const message = personalizeSuccessMessage(type, content.message, fromName, toName)
+
+    document.title = title
+    document.getElementById('success-title').textContent = title
+    document.getElementById('success-message').textContent = message
+    document.querySelector('.back-link').href = withNameParams('index.html', fromName, toName)
 }
 
 function launchConfetti() {
@@ -88,4 +94,44 @@ function toggleMusic() {
         musicPlaying = true
         document.getElementById('music-toggle').textContent = '🔊'
     }
+}
+
+function personalizeSuccessTitle(type, fallbackTitle, toName) {
+    if (!toName) return fallbackTitle
+
+    if (type === 'valentine') return `Happy Valentine's Day, ${toName}! 💕`
+    if (type === 'date') return `${toName} said yes to the date! 🎉`
+    if (type === 'married') return `${toName} said yes forever! 💍`
+
+    return fallbackTitle
+}
+
+function personalizeSuccessMessage(type, fallbackMessage, fromName, toName) {
+    if (!fromName && !toName) return fallbackMessage
+
+    if (type === 'valentine') {
+        if (fromName && toName) return `${toName} just made ${fromName} the happiest person ever. 💖`
+        return `${toName || fromName} just made this page even sweeter. 💖`
+    }
+
+    if (type === 'date') {
+        if (fromName && toName) return `${fromName} and ${toName} officially have a cute date to look forward to. 💕`
+        return `That yes just turned into a very cute date plan. 💕`
+    }
+
+    if (type === 'married') {
+        if (fromName && toName) return `${fromName} and ${toName} just unlocked the forever timeline. 💞`
+        return `That yes just turned into the sweetest forever answer. 💞`
+    }
+
+    return fallbackMessage
+}
+
+function withNameParams(base, fromName, toName) {
+    const url = new URL(base, window.location.href)
+
+    if (fromName) url.searchParams.set('from', fromName)
+    if (toName) url.searchParams.set('to', toName)
+
+    return `${url.pathname.split('/').pop()}${url.search}`
 }
