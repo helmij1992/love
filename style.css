@@ -283,19 +283,37 @@ body[data-proposal-type] {
 }
 
 .preview-frame {
-    width: min(100%, 430px);
-    padding: 20px;
-    border-radius: 32px;
+    width: min(100%, 30rem);
+    padding: 1rem;
+    border-radius: 2rem;
     background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.46)),
-        linear-gradient(135deg, rgba(255, 179, 193, 0.42), rgba(173, 193, 240, 0.38));
-    box-shadow: 0 26px 60px rgba(185, 78, 132, 0.18);
+        linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.5)),
+        linear-gradient(135deg, rgba(255, 194, 214, 0.6), rgba(191, 205, 247, 0.42));
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 24px 60px rgba(185, 78, 132, 0.16);
 }
 
 .home-preview #home-preview-gif {
     width: 100%;
     max-height: none;
-    border-radius: 24px;
+    border-radius: 1.5rem;
+}
+
+.cat-stage {
+    width: min(100%, 36rem);
+    padding: clamp(1rem, 2vw, 1.35rem);
+    border-radius: clamp(1.5rem, 2vw, 2rem);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 245, 250, 0.72)),
+        radial-gradient(circle at top, rgba(255, 198, 220, 0.55), transparent 60%);
+    border: 1px solid rgba(255, 255, 255, 0.62);
+    box-shadow:
+        0 24px 54px rgba(187, 88, 136, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.cat-stage-home {
+    width: 100%;
 }
 
 .home-grid {
@@ -398,12 +416,12 @@ body[data-proposal-type] {
 }
 
 #pikachu-gif {
-    width: min(100%, clamp(17rem, 42vw, 33rem));
-    max-height: min(44vh, 33rem);
+    width: min(100%, clamp(20rem, 48vw, 38rem));
+    max-height: min(50vh, 38rem);
     object-fit: contain;
-    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.15));
+    filter: drop-shadow(0 20px 28px rgba(220, 140, 173, 0.18));
     transition: opacity 0.3s ease;
-    border-radius: 2px;
+    border-radius: 1.5rem;
 }
 
 .buttons {
@@ -624,6 +642,10 @@ body[data-proposal-type] {
     .preview-frame {
         padding: 14px;
         border-radius: 24px;
+    }
+
+    .cat-stage {
+        padding: 0.85rem;
     }
 
     .container {
