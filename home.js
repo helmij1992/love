@@ -33,12 +33,12 @@ const shareConfigs = [
 
 const defaultYourName = ''
 const defaultSiteTitle = 'Cute Love Page'
-const defaultShareHint = 'Your personalized link updates automatically.'
+const defaultShareHint = 'Your personalised link updates automatically.'
 const localCuteCatAsset = 'assets/cute-cat.svg'
 
 const defaultCopy = {
     title: 'Build a cute little love page for someone special.',
-    subtitle: 'Add your names, pick the mood, and let this cute cat-powered page do the blushing for you.'
+    subtitle: 'Add your names, pick the mood, and let this cute page do the blushing for you.'
 }
 
 music.muted = true
@@ -99,20 +99,20 @@ function updateHomeCopy() {
     if (yourName && theirName) {
         document.title = `${yourName} + ${theirName} | Mydate`
         homeTitle.textContent = `${yourName} made this cute little surprise for ${theirName}.`
-        homeSubtitle.textContent = `Pick the sweetest question and let the cat-approved romance begin.`
+        homeSubtitle.textContent = `Pick the sweetest question and let the romance begin.`
         return
     }
 
     if (theirName) {
         document.title = `${theirName} | Mydate`
-        homeTitle.textContent = `A cute little surprise page for ${theirName}.`
+        homeTitle.textContent = `A cute little surprise for ${theirName}.`
         homeSubtitle.textContent = `Add your own name too, then choose the perfect question to ask.`
         return
     }
 
     document.title = `${yourName} | Mydate`
     homeTitle.textContent = `${yourName}, your cute love page is almost ready.`
-    homeSubtitle.textContent = `Add their name next, then launch the sweetest question with the cat cheering you on.`
+    homeSubtitle.textContent = `Add their name next, then launch the sweetest question with a little mascot cheering you on.`
 }
 
 function updateLinks() {
@@ -170,7 +170,7 @@ shareConfigs.forEach((config) => {
     config.button.addEventListener('click', async () => {
         try {
             await navigator.clipboard.writeText(config.input.value)
-            config.status.textContent = 'Link copied. Send it to your person 💕'
+            config.status.textContent = 'Link copied. Send it to your special person 💕'
         } catch (error) {
             config.input.select()
             config.status.textContent = 'Copy failed, but the link is selected for you.'

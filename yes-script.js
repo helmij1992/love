@@ -7,12 +7,12 @@ const successContent = {
         message: "You're my Valentine! 💖"
     },
     date: {
-        title: "It's a date! 🎉",
-        message: "I can't wait to go out with you! 💕"
+        title: "It’s a date! 🎉",
+        message: "I can’t wait to go out with you! 💕"
     },
     married: {
         title: "We're getting married! 💍",
-        message: "This is my favorite yes forever. 💞"
+        message: "This is my favourite yes, forever. 💞"
     }
 }
 

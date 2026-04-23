@@ -24,10 +24,10 @@ const personalizedCopy = {
         defaultTitle: "Will you go on a date with me?",
         title: (toName) => `Will you go on a date with me, ${toName}?`,
         prompt: (fromName, toName) => {
-            if (fromName && toName) return `${fromName} wants to plan something cute with ${toName}. 🎀`
-            if (toName) return `Say yes, ${toName}, and something cute will be planned just for you. 🎀`
-            if (fromName) return `Say yes and ${fromName} will plan something cute for both of you. 🎀`
-            return "Say yes and I’ll plan something cute for us. 🎀"
+            if (fromName && toName) return `${fromName} wants to plan something lovely with ${toName}. 🎀`
+            if (toName) return `Say yes, ${toName}, and something lovely will be planned just for you. 🎀`
+            if (fromName) return `Say yes and ${fromName} will plan something lovely for both of you. 🎀`
+            return "Say yes and I’ll plan something lovely for us. 🎀"
         }
     },
     married: {
@@ -36,9 +36,9 @@ const personalizedCopy = {
         title: (toName) => `Will you marry me, ${toName}?`,
         prompt: (fromName, toName) => {
             if (fromName && toName) return `${fromName} is asking ${toName} the forever question. 💍`
-            if (toName) return `${toName}, this is the forever question, so be nice to me. 💍`
-            if (fromName) return `${fromName} is asking the forever question, so be nice. 💍`
-            return "This is my forever question, so be nice to me. 💍"
+            if (toName) return `${toName}, this is the forever question, so please be kind. 💍`
+            if (fromName) return `${fromName} is asking the forever question, so please be kind. 💍`
+            return "This is my forever question, so please be kind. 💍"
         }
     }
 }
@@ -63,9 +63,9 @@ const noMessagesByType = {
     date: [
         "No",
         "Not even one cute date? 🥺",
-        "I can plan snacks too... 🍓",
+        "I can sort out snacks too... 🍓",
         "Come on, it'll be fun 💕",
-        "You're really making me work for it 😭",
+        "You’re really making me work for it 😭",
         "Too slow, hehe 😜"
     ],
     married: [
