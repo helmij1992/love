@@ -89,13 +89,9 @@ const music = document.getElementById('bg-music')
 const heroBanner = document.querySelector('.hero-banner')
 const pagePrompt = document.querySelector('.page-prompt')
 const backLink = document.querySelector('.back-link')
-const shareUrlInput = document.getElementById('share-url')
-const copyLinkBtn = document.getElementById('copy-link-btn')
-const shareStatus = document.getElementById('share-status')
 
 applyPagePersonalization()
 bindImageFallback()
-setupShareLink()
 
 music.muted = true
 music.volume = 0.3
@@ -234,23 +230,6 @@ function applyPagePersonalization() {
     `
     pagePrompt.textContent = copy.prompt(fromName, toName)
     backLink.href = withNameParams('index.html')
-}
-
-function setupShareLink() {
-    if (!shareUrlInput || !copyLinkBtn || !shareStatus) return
-
-    const shareUrl = new URL(withNameParams(`${pageType}.html`), window.location.href)
-    shareUrlInput.value = shareUrl.toString()
-
-    copyLinkBtn.addEventListener('click', async () => {
-        try {
-            await navigator.clipboard.writeText(shareUrlInput.value)
-            shareStatus.textContent = 'Link copied. Send it to your person 💕'
-        } catch (error) {
-            shareUrlInput.select()
-            shareStatus.textContent = 'Copy failed, but the link is selected for you.'
-        }
-    })
 }
 
 function escapeHtml(value) {

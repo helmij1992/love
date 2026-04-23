@@ -624,15 +624,6 @@ body[data-proposal-type] {
     text-wrap: balance;
 }
 
-.question-share-panel {
-    width: min(100%, 42rem);
-    margin-top: 0;
-}
-
-.question-share-panel .share-row {
-    justify-content: center;
-}
-
 .response-buttons {
     display: flex;
     justify-content: center;
