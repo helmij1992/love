@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cute Love Page</title>
     <meta name="description" content="A cute love page with playful Valentine, date, and forever questions.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#fff7fa">
+    <link rel="canonical" href="/">
     <meta property="og:title" content="Cute Love Page">
     <meta property="og:description" content="A cute love page with playful Valentine, date, and forever questions.">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
     <meta property="og:image" content="/social-preview.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Cute Love Page">
@@ -24,6 +28,48 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Cute Love Page",
+            "description": "A cute love page with playful Valentine, date, and forever questions.",
+            "inLanguage": "en-GB",
+            "isAccessibleForFree": true
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What is this page for?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "This page helps you create a sweet, personalised surprise with Valentine, date, and forever question options."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I personalise the page?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Add your name and your special one’s name, then choose the mood you want to share."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Which mood should I choose?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Choose Valentine for something sweet, Date for something playful, and Married for the boldest version."
+                    }
+                }
+            ]
+        }
+    </script>
 </head>
 <body class="home-page">
     <div class="hearts-bg"></div>
@@ -109,6 +155,22 @@
                     <p class="share-status" id="share-status-married">Your personalised link updates automatically.</p>
                 </div>
             </a>
+        </section>
+
+        <section class="home-faq" aria-labelledby="faq-title">
+            <h2 id="faq-title">Quick questions</h2>
+            <details>
+                <summary>What is this page for?</summary>
+                <p>This page helps you create a sweet, personalised surprise with Valentine, date, and forever question options.</p>
+            </details>
+            <details>
+                <summary>How do I personalise the page?</summary>
+                <p>Add your name and your special one’s name, then choose the mood you want to share.</p>
+            </details>
+            <details>
+                <summary>Which mood should I choose?</summary>
+                <p>Choose Valentine for something sweet, Date for something playful, and Married for the boldest version.</p>
+            </details>
         </section>
     </main>
 
