@@ -1,6 +1,6 @@
 # love
 
-A cute, personalized GitHub Pages mini-site for asking someone to be your Valentine, go on a date, or say yes to forever.
+A cute, personalized static mini-site for asking someone to be your Valentine, go on a date, or say yes to forever.
 
 Live site:
 `https://helmij1992.github.io/love/`
@@ -15,7 +15,7 @@ Live site:
 - Cute cat reaction GIFs
 - Playful `No` button logic
 - Celebration page with confetti
-- GitHub Pages ready static site
+- Static site ready for Netlify or GitHub Pages
 
 ## Project Files
 
@@ -47,32 +47,29 @@ python3 -m http.server 8000
 Then open:
 `http://localhost:8000`
 
+## Netlify Deployment
+
+This project is deployable as-is on Netlify:
+
+- Build command: none
+- Publish directory: `.`
+- Config file: `netlify.toml`
+
+Quick steps:
+
+1. Push this repo to GitHub
+2. In Netlify, choose `Add new site` -> `Import an existing project`
+3. Select this repo
+4. Keep the default branch as `main`
+5. Leave the build command empty
+6. Set the publish directory to `.`
+7. Deploy
+
+Because the site uses relative asset paths and runtime-generated share links, it does not depend on the GitHub Pages URL structure.
+
 ## GitHub Pages
 
-This repo is configured to deploy from:
-
-- Branch: `main`
-- Folder: `/ (root)`
-
-Published URL:
-`https://helmij1992.github.io/love/`
-
-## Custom Domain
-
-To use a custom domain, you will need:
-
-1. A domain or subdomain you control
-2. DNS access from your domain provider
-3. A `CNAME` file in this repo with your chosen domain
-
-Typical setup:
-
-- For a subdomain like `love.example.com`:
-  - Create a `CNAME` DNS record pointing `love.example.com` to `helmij1992.github.io`
-- For an apex domain like `example.com`:
-  - Use your DNS provider's `A` or `ALIAS/ANAME` records based on GitHub Pages requirements
-
-After DNS is ready, add the custom domain in GitHub Pages settings and commit a `CNAME` file containing only the domain.
+If you still want GitHub Pages too, this repo also works from the root of the `main` branch.
 
 ## Personalization
 
@@ -84,7 +81,7 @@ The site passes names using query params and local storage:
 Example:
 
 ```text
-https://helmij1992.github.io/love/valentine.html?from=muhd%20helmi&to=Alya
+/valentine.html?from=Your%20Name&to=Their%20Name
 ```
 
 ## License
