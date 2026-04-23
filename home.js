@@ -9,6 +9,13 @@ const homeTitle = document.getElementById('home-title')
 const homeSubtitle = document.getElementById('home-subtitle')
 const primaryLink = document.querySelector('.home-primary')
 const cardLinks = Array.from(document.querySelectorAll('.question-card'))
+const shareUrlInput = document.getElementById('share-url')
+const copyLinkBtn = document.getElementById('copy-link-btn')
+const shareStatus = document.getElementById('share-status')
+
+const defaultYourName = 'muhd helmi'
+const defaultSiteTitle = `${defaultYourName} | Cute Love Page`
+const defaultShareHint = 'Your personalized link updates automatically.'
 
 const defaultCopy = {
     title: 'Build a cute little love page for someone special.',
@@ -61,7 +68,7 @@ function updateHomeCopy() {
     const { yourName, theirName } = readNames()
 
     if (!yourName && !theirName) {
-        document.title = 'Mydate | Cute Love Page'
+        document.title = defaultSiteTitle
         homeTitle.textContent = defaultCopy.title
         homeSubtitle.textContent = defaultCopy.subtitle
         return
@@ -105,16 +112,23 @@ function persistNames() {
 function syncPersonalization() {
     updateHomeCopy()
     updateLinks()
+    updateShareLink()
     persistNames()
 }
 
 function hydrateNames() {
     const params = new URLSearchParams(window.location.search)
-    const storedYourName = window.localStorage.getItem('vday-your-name') || ''
+    const storedYourName = window.localStorage.getItem('vday-your-name') || defaultYourName
     const storedTheirName = window.localStorage.getItem('vday-their-name') || ''
 
     yourNameInput.value = params.get('from') || storedYourName
     theirNameInput.value = params.get('to') || storedTheirName
+}
+
+function updateShareLink() {
+    const shareUrl = new URL(buildUrl('valentine.html'), window.location.href)
+    shareUrlInput.value = shareUrl.toString()
+    shareStatus.textContent = defaultShareHint
 }
 
 hydrateNames()
@@ -126,4 +140,14 @@ theirNameInput.addEventListener('input', syncPersonalization)
 document.getElementById('surprise-btn').addEventListener('click', () => {
     const target = homePages[Math.floor(Math.random() * homePages.length)]
     window.location.href = buildUrl(target)
+})
+
+copyLinkBtn.addEventListener('click', async () => {
+    try {
+        await navigator.clipboard.writeText(shareUrlInput.value)
+        shareStatus.textContent = 'Link copied. Send it to your person 💕'
+    } catch (error) {
+        shareUrlInput.select()
+        shareStatus.textContent = 'Copy failed, but the link is selected for you.'
+    }
 })

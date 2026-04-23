@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1F5"/>
+      <stop offset="1" stop-color="#FFB5C8"/>
+    </linearGradient>
+    <linearGradient id="card" x1="154" y1="117" x2="1046" y2="513" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#FFE3EC" stop-opacity="0.96"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="143" cy="507" r="180" fill="#FFC3D2" fill-opacity="0.55"/>
+  <circle cx="1035" cy="119" r="154" fill="#FF93B5" fill-opacity="0.48"/>
+  <rect x="152" y="116" width="896" height="386" rx="34" fill="url(#card)"/>
+  <rect x="208" y="169" width="784" height="88" rx="14" fill="#B7C6EF"/>
+  <text x="600" y="225" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="58" font-weight="900" fill="#D72F85">muhd helmi's cute love page</text>
+  <text x="212" y="332" font-family="Nunito, Arial, sans-serif" font-size="34" font-weight="800" fill="#A12C68">Cat-powered romance with playful yes/no pages</text>
+  <text x="212" y="384" font-family="Nunito, Arial, sans-serif" font-size="24" font-weight="700" fill="#7F4760">Valentine • Date • Married</text>
+  <text x="212" y="432" font-family="Nunito, Arial, sans-serif" font-size="28" font-weight="800" fill="#D63384">Share a sweet surprise in one link 💕</text>
+  <text x="1020" y="112" text-anchor="end" font-family="Arial, sans-serif" font-size="84" font-weight="900" fill="#FF4D93">🐱</text>
+</svg>

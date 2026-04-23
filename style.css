@@ -205,6 +205,54 @@ body.home-page {
     font-weight: 800;
 }
 
+.share-panel {
+    max-width: 620px;
+    margin-top: 24px;
+    padding: 18px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.68);
+    box-shadow: 0 16px 34px rgba(185, 78, 132, 0.1);
+}
+
+.share-label {
+    color: #b23872;
+    font-size: 0.9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.share-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+#share-url {
+    flex: 1 1 320px;
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid rgba(214, 51, 132, 0.14);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.88);
+    color: #863f61;
+    font: inherit;
+    font-weight: 700;
+}
+
+.share-button {
+    white-space: nowrap;
+}
+
+.share-status {
+    margin-top: 10px;
+    color: #9e2d65;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
 .home-preview {
     display: flex;
     justify-content: center;
@@ -558,6 +606,12 @@ body.home-page {
     .home-actions,
     .home-badges {
         justify-content: center;
+    }
+
+    .share-panel {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
     }
 
     .home-grid {

@@ -1,9 +1,9 @@
-# Mydate
+# love
 
 A cute, personalized GitHub Pages mini-site for asking someone to be your Valentine, go on a date, or say yes to forever.
 
 Live site:
-`https://helmij1992.github.io/Mydate/`
+`https://helmij1992.github.io/love/`
 
 ## Features
 
@@ -20,7 +20,7 @@ Live site:
 ## Project Files
 
 ```text
-Mydate/
+love/
 ├── index.html
 ├── home.js
 ├── valentine.html
@@ -55,7 +55,7 @@ This repo is configured to deploy from:
 - Folder: `/ (root)`
 
 Published URL:
-`https://helmij1992.github.io/Mydate/`
+`https://helmij1992.github.io/love/`
 
 ## Custom Domain
 
@@ -84,7 +84,7 @@ The site passes names using query params and local storage:
 Example:
 
 ```text
-https://helmij1992.github.io/Mydate/valentine.html?from=Muhammad&to=Alya
+https://helmij1992.github.io/love/valentine.html?from=muhd%20helmi&to=Alya
 ```
 
 ## License
