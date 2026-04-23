@@ -19,6 +19,9 @@
     --prompt-font: clamp(1.05rem, 1.6vw, 1.3rem);
     --yes-font: clamp(1.1rem, 1.8vw, 1.55rem);
     --no-font: clamp(0.95rem, 1.2vw, 1.05rem);
+    --surface-soft: rgba(255, 255, 255, 0.78);
+    --surface-card: rgba(255, 255, 255, 0.66);
+    --surface-border: rgba(214, 51, 132, 0.14);
 }
 
 body {
@@ -93,7 +96,7 @@ body[data-proposal-type] {
     z-index: 1;
     width: min(1180px, calc(100% - 32px));
     margin: 0 auto;
-    padding: 48px 0 72px;
+    padding: clamp(1.75rem, 4vw, 3rem) 0 clamp(3rem, 6vw, 4.5rem);
 }
 
 .home-hero {
@@ -105,6 +108,7 @@ body[data-proposal-type] {
 
 .home-copy {
     text-align: left;
+    min-width: 0;
 }
 
 .home-kicker {
@@ -234,7 +238,7 @@ body[data-proposal-type] {
     margin-top: 24px;
     padding: 18px;
     border-radius: 24px;
-    background: rgba(255, 255, 255, 0.68);
+    background: var(--surface-card);
     box-shadow: 0 16px 34px rgba(185, 78, 132, 0.1);
 }
 
@@ -254,16 +258,17 @@ body[data-proposal-type] {
     flex-wrap: wrap;
 }
 
-#share-url {
+[id^="share-url"] {
     flex: 1 1 320px;
     min-width: 0;
     padding: 14px 16px;
-    border: 1px solid rgba(214, 51, 132, 0.14);
+    border: 1px solid var(--surface-border);
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.88);
     color: #863f61;
     font: inherit;
     font-weight: 700;
+    width: 100%;
 }
 
 .share-button {
@@ -327,12 +332,13 @@ body[data-proposal-type] {
     display: block;
     padding: 24px;
     border-radius: 28px;
-    background: rgba(255, 255, 255, 0.62);
+    background: var(--surface-card);
     border: 1px solid rgba(214, 51, 132, 0.1);
     box-shadow: 0 18px 42px rgba(185, 78, 132, 0.12);
     text-decoration: none;
     color: inherit;
     transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    min-width: 0;
 }
 
 .question-card:hover {
@@ -386,6 +392,8 @@ body[data-proposal-type] {
 
 .card-share-panel .share-row {
     margin-top: 8px;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .card-share-panel input {
@@ -394,6 +402,8 @@ body[data-proposal-type] {
 
 .card-share-panel .home-secondary {
     padding: 12px 16px;
+    width: 100%;
+    text-align: center;
 }
 
 .card-share-panel .share-status {
@@ -658,11 +668,23 @@ body[data-proposal-type] {
     }
 
     .home-title {
-        font-size: 2.8rem;
+        font-size: clamp(2.2rem, 12vw, 2.8rem);
+        line-height: 1;
     }
 
     .home-personalize {
         grid-template-columns: 1fr;
+    }
+
+    .home-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .home-primary,
+    .home-secondary {
+        width: 100%;
+        text-align: center;
     }
 
     .preview-frame {
@@ -676,6 +698,19 @@ body[data-proposal-type] {
 
     .container {
         padding: 24px 16px 44px;
+    }
+
+    .question-card {
+        padding: 20px 18px;
+        border-radius: 24px;
+    }
+
+    .question-card h2 {
+        font-size: clamp(1.8rem, 9vw, 2.2rem);
+    }
+
+    .question-card p {
+        font-size: 1rem;
     }
 
     .hero-banner {
@@ -693,6 +728,16 @@ body[data-proposal-type] {
 
     .response-buttons {
         gap: 12px;
+    }
+
+    .page-prompt {
+        font-size: 1rem;
+    }
+
+    #yes-btn,
+    #no-btn {
+        width: 100%;
+        max-width: 18rem;
     }
 
 }
@@ -724,6 +769,11 @@ body[data-proposal-type] {
 
     .home-grid {
         grid-template-columns: 1fr;
+    }
+
+    .home-grid,
+    .home-hero {
+        gap: 24px;
     }
 
 }
