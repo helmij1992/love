@@ -1,6 +1,17 @@
 <svg width="720" height="720" viewBox="0 0 720 720" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="720" height="720" rx="56" fill="#FFF7FA"/>
+  <defs>
+    <linearGradient id="bg" x1="92" y1="70" x2="628" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDFE"/>
+      <stop offset="1" stop-color="#FBE7F1"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="720" rx="56" fill="url(#bg)"/>
   <circle cx="360" cy="308" r="214" fill="#FFFFFF" fill-opacity="0.86"/>
+  <path d="M164 122C176 108 192 102 209 102C228 102 243 109 254 123C265 109 280 102 299 102C316 102 332 108 344 122C356 137 355 158 345 171C334 185 317 194 254 224C190 194 174 185 163 171C153 158 152 137 164 122Z" fill="#E8EAF7"/>
+  <path d="M168 172C168 150 186 132 208 132H300C322 132 340 150 340 172C340 194 322 212 300 212H208C186 212 168 194 168 172Z" fill="#E4E7F4"/>
+  <path d="M212 214L202 246" stroke="#BBD9FF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M264 214L254 250" stroke="#BBD9FF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M314 214L304 246" stroke="#BBD9FF" stroke-width="8" stroke-linecap="round"/>
   <g stroke="#2E316E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
     <path d="M118 468H602"/>
     <path d="M248 250L210 116C202 88 220 66 248 72L292 214L248 250Z" fill="#FFD83D"/>
